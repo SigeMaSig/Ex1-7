@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <script>
+    let password = 12345;
+    let attempts = 0;
+    let option;
+    let num1 , num2 ;
+
+// Password validation loop
+    while (attempts < 4) {
+    let userInput = parseInt(prompt("กรุณาใส่รหัสผ่าน:", ""));
+
+    if (userInput === password) {
+    break; // Exit loop if password is correct
+        } else {
+    attempts++;
+    alert("ใส่รหัสไม่ถูกต้องครั้งที่ "+attempts);
+    if (attempts === 4) {
+      alert("คุณใส่รหัสผิด 4 ครั้ง เราขอนำคุณออกจากระบบ");
+      throw "Exited program due to incorrect password attempts";
+    }
+  }
+}
+
+// Menu options
+while (option!=4) {
+  option = parseInt(
+    prompt(
+      "เลือกเมนูที่ต้องการทำด้านล่าง:\n1. +\n2. -\n3. X\n4. Exit\nคุณเลือก:", ""
+    )
+  );
+
+  switch (option) {
+    case 1: // Addition
+      num1 = parseInt(prompt("ใส่ตัวเลขที่ 1:", ""));
+      num2 = parseInt(prompt("ใส่ตัวเลขที่ 2:", ""));
+      alert("ผลลัพธ์: " + (num1+num2));
+      option = 4
+      break;
+
+    case 2: // Subtraction
+      num1 = parseInt(prompt("ใส่ตัวเลขที่ 1:", ""));
+      num2 = parseInt(prompt("ใส่ตัวเลขที่ 2:", ""));
+      if (num1 >= num2) {
+        alert("ผลลัพธ์: " + (num1-num2));
+      } else {
+        alert("ผลลัพธ์: " + (num2-num1));
+      }
+      option = 4
+      break;
+
+    case 3: // Multiplication
+      num1 = parseInt(prompt("ใส่ตัวเลขที่ 1:", ""));
+      num2 = parseInt(prompt("ใส่ตัวเลขที่ 2:", ""));
+      alert("ผลลัพธ์: " + (num1*num2));
+      option = 4
+      break;
+
+    case 4: // Exit
+      alert("Exiting program.");
+      throw "Program exited by user";
+
+    default:
+      alert("ตัวเลือกไม่ถูกต้อง กรุณาเลือกใหม่อีกครั้ง");
+      break;
+  }
+}
+
+     </script>
+</body>
+</html>

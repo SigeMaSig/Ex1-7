@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Convenience Store Stock</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Stock</th>
+          <th>Price (THB)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="product-table">
+        <!-- รายการสินค้าจะถูกเพิ่มที่นี่โดย JavaScript -->
+      </tbody>
+    </table>
+    
+    <div class="update-section">
+      <h2>Update Product Stock</h2>
+      <label for="product-id">Product ID:</label>
+      <input type="number" id="product-id" placeholder="Enter Product ID" />
+      
+      <label for="new-stock">New Stock:</label>
+      <input type="number" id="new-stock" placeholder="Enter New Stock" />
+      
+      <button id="update-stock-btn">Update Stock</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
